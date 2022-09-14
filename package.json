@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "lint": "eslint --fix --cache ."
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:js": "eslint --fix --cache .",
+    "lint:css": "stylelint --fix --cache **/*.{astro,css}"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.37.0",
@@ -20,6 +22,12 @@
     "eslint-plugin-jsx-a11y": "6.6.1",
     "eslint-plugin-n": "15.2.5",
     "eslint-plugin-promise": "6.0.1",
-    "eslint-plugin-simple-import-sort": "8.0.0"
+    "eslint-plugin-simple-import-sort": "8.0.0",
+    "postcss-html": "1.5.0",
+    "stylelint": "14.11.0",
+    "stylelint-config-html": "1.1.0",
+    "stylelint-config-prettier": "9.0.3",
+    "stylelint-config-property-sort-order-smacss": "9.0.0",
+    "stylelint-config-standard": "28.0.0"
   }
 }
