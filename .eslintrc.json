@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": [
+    "standard-with-typescript",
+    "plugin:astro/jsx-a11y-strict",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "extraFileExtensions": [".astro"]
+  },
+  "plugins": ["simple-import-sort"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/triple-slash-reference": [
+      "error",
+      { "lib": "always", "path": "never", "types": "prefer-import" }
+    ],
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "error"
+  },
+  "ignorePatterns": ["public", "dist"]
+}
