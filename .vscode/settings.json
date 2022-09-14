@@ -6,5 +6,6 @@
     "typescript",
     "typescriptreact"
   ],
+  "prettier.documentSelectors": ["**/*.astro"],
   "stylelint.validate": ["astro", "css", "postcss"]
 }

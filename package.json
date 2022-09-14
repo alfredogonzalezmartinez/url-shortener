@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "format": "prettier --write --cache --plugin-search-dir=. .",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint --fix --cache .",
     "lint:css": "stylelint --fix --cache **/*.{astro,css}"
@@ -24,6 +25,8 @@
     "eslint-plugin-promise": "6.0.1",
     "eslint-plugin-simple-import-sort": "8.0.0",
     "postcss-html": "1.5.0",
+    "prettier": "2.7.1",
+    "prettier-plugin-astro": "0.5.4",
     "stylelint": "14.11.0",
     "stylelint-config-html": "1.1.0",
     "stylelint-config-prettier": "9.0.3",
