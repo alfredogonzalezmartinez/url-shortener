@@ -1,0 +1,56 @@
+<form>
+  <label>
+    <span> URL</span>
+    <input type="url" name="url" id="url" required autocomplete="off" />
+  </label>
+  <div class="field-group">
+    <label>
+      <span> Hash</span>
+      <input type="text" name="hash" id="hash" required autocomplete="off" />
+    </label>
+    <label>
+      <span> Auth code</span>
+      <input
+        type="password"
+        name="auth-code"
+        id="auth-code"
+        required
+        autocomplete="one-time-code"
+      />
+    </label>
+  </div>
+  <div>
+    <label class="checkbox">
+      <input type="checkbox" name="overwrite" id="overwrite" />
+      <span>Overwrite</span>
+    </label>
+  </div>
+  <button>Shorten</button>
+</form>
+
+<style>
+  form,
+  label:not(.checkbox) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  form,
+  .field-group {
+    gap: calc(var(--size-base) * 2);
+  }
+
+  .field-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+  }
+
+  .field-group > label {
+    flex-grow: 1;
+  }
+
+  label:not(.checkbox) > span {
+    font-weight: bold;
+  }
+</style>

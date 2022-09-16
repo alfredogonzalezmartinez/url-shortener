@@ -1,8 +1,13 @@
 ---
 import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
+import ShortenerForm from "@/components/ShortenerForm.astro";
 import Layout from "@/layouts/Layout.astro";
 ---
 
 <Layout title="URL Shortener">
   <Header />
+  <Section title="Create a short URL">
+    <ShortenerForm />
+  </Section>
 </Layout>
