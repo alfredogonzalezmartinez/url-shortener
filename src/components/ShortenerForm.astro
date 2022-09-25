@@ -1,4 +1,5 @@
-<form>
+<wc-toast />
+<form id="shortener-form">
   <label>
     <span> URL</span>
     <input type="url" name="url" id="url" required autocomplete="off" />
@@ -27,6 +28,51 @@
   </div>
   <button>Shorten</button>
 </form>
+
+<script>
+  import { toast } from "wc-toast";
+
+  const shortenerForm =
+    document.querySelector<HTMLFormElement>("#shortener-form");
+
+  shortenerForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const authCode = shortenerForm["auth-code"].value;
+    const hash = shortenerForm.hash.value;
+    const isOverwriting = shortenerForm.overwrite.checked;
+    const url = shortenerForm.url.value;
+
+    const requestOptions = {
+      method: isOverwriting ? "PUT" : "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ authCode, hash, url }),
+    };
+
+    const { data, error } = await fetch("/api/redirections", requestOptions)
+      .then((response) => response.json())
+      .catch(() => ({ error: "Something went wrong" }));
+
+    if (error) {
+      return toast(error, {
+        icon: { type: "error" },
+        duration: 5000,
+        theme: { type: "dark" },
+      });
+    }
+
+    const shortenedUrl = data.url;
+    await navigator.clipboard.writeText(shortenedUrl);
+
+    shortenerForm.reset();
+
+    return toast("Shortened URL copied to clipboard", {
+      icon: { type: "success" },
+      duration: 5000,
+      theme: { type: "dark" },
+    });
+  });
+</script>
 
 <style>
   form,
