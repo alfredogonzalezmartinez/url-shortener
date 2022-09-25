@@ -1,7 +1,7 @@
 import { ERROR_STATUS, errorResponse } from "../helpers/responseWrappers";
 
 export const checkHash: PagesFunction<
-  Environment,
+  Bindings,
   any,
   { hash?: Hash; isFreeHash?: IsFreeHash }
 > = async ({ data, env, request, next }) => {

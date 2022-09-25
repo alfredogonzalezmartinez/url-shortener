@@ -1,7 +1,7 @@
 import { SUSSES_STATUS, sussesResponse } from "../helpers/responseWrappers";
 
 export const saveRedirection: PagesFunction<
-  Environment,
+  Bindings,
   any,
   { hash?: Hash; isFreeHash?: IsFreeHash; url?: Url }
 > = async ({ env, request, data }) => {

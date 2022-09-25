@@ -1,7 +1,7 @@
 import { ERROR_STATUS, errorResponse } from "../helpers/responseWrappers";
 
 export const auth: PagesFunction<
-  Environment,
+  Bindings,
   any,
   { authCode?: AuthCode }
 > = async ({ data, env, next }) => {

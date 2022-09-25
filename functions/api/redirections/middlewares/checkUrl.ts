@@ -1,7 +1,7 @@
 import { isValidUrl } from "../helpers/isValidUrl";
 import { ERROR_STATUS, errorResponse } from "../helpers/responseWrappers";
 
-export const checkUrl: PagesFunction<Environment, any, { url?: Url }> = async ({
+export const checkUrl: PagesFunction<Bindings, any, { url?: Url }> = async ({
   data,
   next,
 }) => {

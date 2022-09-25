@@ -2,7 +2,7 @@ import { isMissing } from "../helpers/isMissing";
 import { ERROR_STATUS, errorResponse } from "../helpers/responseWrappers";
 
 export const checkRequiredDataToSave: PagesFunction<
-  Environment,
+  Bindings,
   any,
   { hash?: Hash; url?: Url }
 > = async ({ data, next }) => {
