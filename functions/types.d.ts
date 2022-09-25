@@ -4,6 +4,6 @@ type IsFreeHash = boolean;
 type Url = string;
 
 interface Environment {
-  Redirections?: KVNamespace;
+  REDIRECTIONS?: KVNamespace;
   AUTH_CODE?: AuthCode;
 }

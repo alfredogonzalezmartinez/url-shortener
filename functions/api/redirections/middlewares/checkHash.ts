@@ -7,7 +7,7 @@ export const checkHash: PagesFunction<
 > = async ({ data, env, request, next }) => {
   const hash = data.hash as string;
 
-  const isFreeHash = (await env.Redirections?.get(hash)) == null;
+  const isFreeHash = (await env.REDIRECTIONS?.get(hash)) == null;
 
   if (request.method === "POST") {
     if (!isFreeHash) {

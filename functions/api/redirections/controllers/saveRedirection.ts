@@ -9,7 +9,7 @@ export const saveRedirection: PagesFunction<
   const url = data.url as string;
   const isFreeHash = data.isFreeHash as boolean;
 
-  await env.Redirections?.put(hash, url);
+  await env.REDIRECTIONS?.put(hash, url);
 
   const urlBase = new URL(request.url).origin;
   const sortUrl = { url: `${urlBase}/${hash}` };

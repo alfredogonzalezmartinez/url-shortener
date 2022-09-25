@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "wrangler pages dev --proxy 3000 --kv Redirections -- astro dev",
+    "dev": "wrangler pages dev --proxy 3000 --kv REDIRECTIONS -- astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write --cache --plugin-search-dir=. .",
