@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "wrangler pages dev --proxy 3000 --kv REDIRECTIONS -- astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "wrangler pages dev dist --kv REDIRECTIONS",
     "format": "prettier --write --cache --plugin-search-dir=. .",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint --fix --cache .",
