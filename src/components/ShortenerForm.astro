@@ -29,11 +29,10 @@
   <button>Shorten</button>
 </form>
 
-<script>
-  import { toast } from "wc-toast";
+<script type="module">
+  import { toast } from " https://cdn.skypack.dev/pin/wc-toast@v1.2.7-eURGUKeY8TKxBa07Spbj/mode=imports,min/optimized/wc-toast.js";
 
-  const shortenerForm =
-    document.querySelector<HTMLFormElement>("#shortener-form");
+  const shortenerForm = document.querySelector("#shortener-form");
 
   shortenerForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
