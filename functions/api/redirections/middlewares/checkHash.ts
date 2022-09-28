@@ -20,10 +20,8 @@ export const checkHash: PagesFunction<
 
   const isFreeHash = (await env.REDIRECTIONS?.get(hash)) == null;
 
-  if (request.method === "POST") {
-    if (!isFreeHash) {
-      return errorResponse("Hash is in use", ERROR_STATUS.BAD_REQUEST);
-    }
+  if (request.method === "POST" && !isFreeHash) {
+    return errorResponse("Hash is in use", ERROR_STATUS.BAD_REQUEST);
   }
 
   data.isFreeHash = isFreeHash;
