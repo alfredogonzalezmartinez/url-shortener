@@ -1,0 +1,17 @@
+<script type="module">
+  import { toast } from "https://cdn.skypack.dev/wc-toast";
+  const TOAST_CONFIG = { duration: 5000, theme: { type: "dark" } };
+
+  window.errorToast = (message) =>
+    toast(message, {
+      ...TOAST_CONFIG,
+      icon: { type: "error" },
+    });
+
+  window.successToast = (message) =>
+    toast(message, {
+      ...TOAST_CONFIG,
+      icon: { type: "success" },
+    });
+</script>
+<wc-toast />
